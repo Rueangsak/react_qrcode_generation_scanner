@@ -26,7 +26,7 @@ function QR() {
   return (
     <Container className={classes.conatiner}>
 
-        <Grid>
+        <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
             <TextField label="Enter Text Here" onChange={(e) => setText(e.target.value)}/>
             <Button className={classes.btn} variant="contained" 
                 color="primary" onClick={() => generateQrCode()}>Generate</Button>
