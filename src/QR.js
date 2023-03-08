@@ -26,7 +26,7 @@ function QR() {
   return (
     <Container className={classes.conatiner}>
 
-        
+        <Grid>
             <TextField label="Enter Text Here" onChange={(e) => setText(e.target.value)}/>
             <Button className={classes.btn} variant="contained" 
                 color="primary" onClick={() => generateQrCode()}>Generate</Button>
@@ -36,7 +36,7 @@ function QR() {
                 {imageUrl ? (
                     <img src={imageUrl} alt="img"/>
                 ) : null}
-        
+        </Grid>
     </Container>
   );
 }
