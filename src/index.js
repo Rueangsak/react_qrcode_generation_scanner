@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import QR from './QR';
+// import QR from './QR';
+import Run from './Run';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <QR/>
+    <Run/>
   </React.StrictMode>,
   document.getElementById('root')
 );
