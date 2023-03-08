@@ -4,7 +4,8 @@ import QRCode from 'qrcode';
 import QrReader from 'react-qr-reader';
 
 
-function App() { 
+function App() {
+
   const [text, setText] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [scanResultFile, setScanResultFile] = useState('');
@@ -12,6 +13,8 @@ function App() {
   const classes = useStyles();
   const qrRef = useRef(null);
 
+
+  
 
   const generateQrCode = async () => {
     try {
@@ -21,6 +24,7 @@ function App() {
       console.log(error);
     }
   }
+
   const handleErrorFile = (error) => {
     console.log(error);
   }
@@ -40,11 +44,12 @@ function App() {
         setScanResultWebCam(result);
     }
    }
+  
   return (
     <Container className={classes.conatiner}>
-          <Card>
-              <h2 className={classes.title}>Generate Download & Scan QR Code with React js</h2>
-              <CardContent>
+          
+              <h2 className={classes.title}>QR Code</h2>
+      
                   <Grid container spacing={2}>
                       <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
                           <TextField label="Enter Text Here" onChange={(e) => setText(e.target.value)}/>
@@ -56,8 +61,11 @@ function App() {
                             {imageUrl ? (
                               <a href={imageUrl} download>
                                   <img src={imageUrl} alt="img"/>
-                              </a>) : null}
+                              </a>
+                              ) : null}
+
                       </Grid>
+
                       <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
                         <Button className={classes.btn} variant="contained" color="secondary" onClick={onScanFile}>Scan Qr Code</Button>
                         <QrReader
@@ -81,8 +89,8 @@ function App() {
                          <h3>Scanned By WebCam Code: {scanResultWebCam}</h3>
                       </Grid>
                   </Grid>
-              </CardContent>
-          </Card>
+              
+          
     </Container>
   );
 }
